@@ -1,0 +1,75 @@
+import { Menu, Search, X } from "lucide-react";
+import React, { useState } from "react";
+import { Link } from "react-router";
+
+const Header = () => {
+	const [openDropdown, setOpenDropdown] = useState(false);
+	return (
+		<div className="border-b border-b-[#e3e6eb]">
+			<div className="container">
+				<div className="py-4">
+					<div className="flex items-center justify-between gap-4">
+						{/* NewsPortal Logo */}
+						<Link
+							className="flex items-center gap-2 group"
+							href="/"
+						>
+							<div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-lg flex items-center justify-center transform group-hover:scale-105 transition-transform">
+								<span className="text-white font-bold text-lg sm:text-xl">
+									N
+								</span>
+							</div>
+							<div className="hidden sm:block">
+								<h1 className="text-xl sm:text-2xl font-bold text-(--color-foreground)">
+									NewsPortal
+								</h1>
+								<p className="text-xs text-(--color-muted-foreground) -mt-1">
+									Your Trusted News Source
+								</p>
+							</div>
+						</Link>
+
+						{/* Search Box */}
+						<form className="hidden md:flex flex-1 max-w-md mx-8">
+							<div className="relative w-full">
+								<input
+									type="text"
+									className="flex h-10 w-full rounded-md outline-none px-3 py-2 text-base placeholder:text-[#676e7e]  md:text-sm pr-10 bg-[#f3f4f6]"
+									placeholder="Search news..."
+								></input>
+
+								<button
+									className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground rounded-md absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7 p-0"
+									type="submit"
+								>
+									<Search />
+								</button>
+							</div>
+						</form>
+
+						{/* Subscribe Now Button */}
+						<button className="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium  transition-colors text-(--color-primary-foreground) h-10 px-4 py-2 hidden md:flex bg-primary hover:bg-primary/90">
+							Subscribe
+						</button>
+
+						<div className="md:hidden">
+							{/* Humbarger Icon */}
+							<button
+								onClick={() => setOpenDropdown(!openDropdown)}
+								className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors bg-primary text-(--color-card) hover:bg-accent hover:text-(--color-accent-foreground) h-9 w-9"
+							>
+								{openDropdown ? (
+									<X size={22} />
+								) : (
+									<Menu size={22} />
+								)}
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
+};
+
+export default Header;

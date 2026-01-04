@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+@plugin "daisyui" {
+	themes: light --default;
+}
+@plugin "daisyui/theme" {
+	name: "light";
+	default: true;
+
+	--color-background: #f9f9f9;
+	--color-foreground: #20242b;
+
+	--color-card: #ffffff;
+	--color-card-foreground: #20242b;
+
+	--color-popover: #ffffff;
+	--color-popover-foreground: #20242b;
+
+	--color-primary: #c52020;
+	--color-primary-foreground: #ffffff;
+
+	--color-secondary: #f3f4f6;
+	--color-secondary-foreground: #363c49;
+
+	--color-muted: #f3f4f6;
+	--color-muted-foreground: #676e7e;
+
+	--accent: #c52020;
+	--accent-foreground: #ffffff;
+}
+
+@custom-variant dark (&:where([data-theme=night], [data-theme=night] *));
+
+.container {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin: auto;
+}
+
+.inter {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+}
