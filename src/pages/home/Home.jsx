@@ -17,6 +17,15 @@ const Home = () => {
 			.then((res) => res.json())
 			.then((data) => setNews(data));
 	}, []);
+
+	const filteredNews =
+		activeCategory === "Home"
+			? news
+			: news.filter(
+					(nws) =>
+						nws.category?.toLowerCase() ===
+						activeCategory.toLowerCase()
+			  );
 	return (
 		<div className="inter min-h-screen">
 			{/* Category Buttons */}
@@ -64,14 +73,22 @@ const Home = () => {
 			</div>
 
 			{/* News Sections */}
-			<section className="py-8 pt-40 sm:pt-24">
-				<FeaturedNews />
+			<section
+				className={`sm:pt-24 ${
+					activeCategory === "Home" ? "pt-40 py-8" : "pt-0 py-0"
+				}`}
+			>
+				{activeCategory === "Home" && <FeaturedNews />}
 			</section>
 
+			{/* All News */}
 			<div className="container">
 				<div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 					<div className="lg:col-span-2">
-						<LeftSide news={news} />
+						<LeftSide
+							activeCategory={activeCategory}
+							filteredNews={filteredNews}
+						/>
 					</div>
 					<div className="space-y-6"></div>
 				</div>
