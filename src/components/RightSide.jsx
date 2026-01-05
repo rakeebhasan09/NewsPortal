@@ -25,9 +25,7 @@ const RightSide = () => {
 			<div className="bg-(--color-card) rounded-xl border border-[#D2D4D9] p-5">
 				<div className="flex items-center gap-2 mb-5">
 					<TrendingUp className="text-primary" />
-					<h2 className="text-lg font-bold">
-						Trending Now {trandingNews.length}
-					</h2>
+					<h2 className="text-lg font-bold">Trending Now</h2>
 				</div>
 				<div className="space-y-1">
 					{trandingNews.map((tranding, index) => (
