@@ -1,0 +1,8 @@
+[
+	{ "id": "national", "name": "জাতীয়", "nameEn": "National" },
+	{ "id": "international", "name": "আন্তর্জাতিক", "nameEn": "International" },
+	{ "id": "sports", "name": "খেলা", "nameEn": "Sports" },
+	{ "id": "technology", "name": "প্রযুক্তি", "nameEn": "Technology" },
+	{ "id": "entertainment", "name": "বিনোদন", "nameEn": "Entertainment" },
+	{ "id": "business", "name": "ব্যবসা", "nameEn": "Business" }
+]

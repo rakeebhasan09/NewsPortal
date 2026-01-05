@@ -32,6 +32,7 @@
 @custom-variant dark (&:where([data-theme=night], [data-theme=night] *));
 
 .container {
+	max-width: 1280px;
 	padding-left: 15px;
 	padding-right: 15px;
 	margin: auto;
@@ -40,4 +41,8 @@
 .inter {
 	font-family: "Inter", sans-serif;
 	font-weight: 400;
+}
+
+button {
+	cursor: pointer;
 }

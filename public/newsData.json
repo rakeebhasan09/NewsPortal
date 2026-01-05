@@ -1,0 +1,140 @@
+[
+	{
+		"id": "1",
+		"title": "New Infrastructure Development Project Launches Across Major Cities",
+		"description": "Government announces ambitious infrastructure development plan spanning five major metropolitan areas with focus on sustainable transportation.",
+		"content": "The government has unveiled an ambitious infrastructure development project that will transform transportation and connectivity across five major metropolitan areas.\n\nThe project, scheduled for completion by 2028, aims to reduce traffic congestion by 40% and cut carbon emissions from urban transportation by half.\n\nKey features include:\n- 200 kilometers of new metro rail lines\n- Smart traffic management systems\n- Electric bus fleets\n- Integrated payment systems for all public transport\n- Green corridors connecting major districts\n\nTransportation Minister highlighted that this project represents the largest investment in urban infrastructure in the nation's history.\n\nLocal governments have already begun preliminary work, with detailed project timelines expected within the next quarter.",
+		"image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop",
+		"category": "national",
+		"author": "Rahman Ahmed",
+		"publishedAt": "2024-01-15T10:30:00Z",
+		"readTime": 5,
+		"isFeatured": true
+	},
+	{
+		"id": "2",
+		"title": "Global Climate Summit Reaches Historic Agreement on Emissions",
+		"description": "World leaders commit to unprecedented measures to combat climate change at the annual climate summit, setting new targets for 2035.",
+		"content": "World leaders at the annual Global Climate Summit have reached a historic agreement on emissions reduction.\n\nThe agreement includes binding commitments for emissions reduction, coal phase-out, climate finance, and technology transfer.\n\nThe accord establishes a robust monitoring mechanism and enforcement provisions.",
+		"image": "https://images.unsplash.com/photo-1569163139599-0f4517e36f51?w=1200&h=800&fit=crop",
+		"category": "international",
+		"author": "Sarah Johnson",
+		"publishedAt": "2024-01-15T08:00:00Z",
+		"readTime": 6,
+		"isTrending": true
+	},
+	{
+		"id": "3",
+		"title": "National Cricket Team Secures Series Victory in Thrilling Final Match",
+		"description": "An outstanding performance by the national cricket team leads to a memorable series win against the touring side.",
+		"content": "The national cricket team delivered a masterclass performance in the final match of the series.\n\nThe match featured a stunning century, disciplined bowling, and electric fielding.\n\nCaptain expressed immense pride in the team's performance.",
+		"image": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=1200&h=800&fit=crop",
+		"category": "sports",
+		"author": "Kamal Hossain",
+		"publishedAt": "2024-01-14T20:00:00Z",
+		"readTime": 4,
+		"isTrending": true
+	},
+	{
+		"id": "4",
+		"title": "Revolutionary AI Technology Transforms Healthcare Diagnostics",
+		"description": "New artificial intelligence system achieves 99% accuracy in early disease detection, promising to revolutionize medical diagnostics.",
+		"content": "A groundbreaking AI system has achieved unprecedented accuracy in early disease detection.\n\nThe system supports real-time medical imaging analysis and integrates with hospital systems.\n\nClinical trials have validated its effectiveness.",
+		"image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&h=800&fit=crop",
+		"category": "technology",
+		"author": "Dr. Lisa Chen",
+		"publishedAt": "2024-01-14T14:30:00Z",
+		"readTime": 5,
+		"isFeatured": true
+	},
+	{
+		"id": "5",
+		"title": "Award-Winning Film Breaks Box Office Records in Opening Weekend",
+		"description": "The critically acclaimed film surpasses all expectations with record-breaking opening weekend collections.",
+		"content": "The film shattered box office records with extraordinary opening weekend earnings.\n\nIndustry analysts predict continued strong performance in the coming weeks.",
+		"image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1200&h=800&fit=crop",
+		"category": "entertainment",
+		"author": "Priya Sharma",
+		"publishedAt": "2024-01-14T12:00:00Z",
+		"readTime": 3
+	},
+	{
+		"id": "6",
+		"title": "Stock Market Reaches All-Time High Amid Economic Optimism",
+		"description": "Major indices surge to record levels as investors respond positively to strong economic indicators.",
+		"content": "Stock markets have reached unprecedented highs driven by strong economic fundamentals.\n\nExperts advise maintaining diversified portfolios.",
+		"image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=800&fit=crop",
+		"category": "business",
+		"author": "Michael Roberts",
+		"publishedAt": "2024-01-14T09:00:00Z",
+		"readTime": 4,
+		"isTrending": true
+	},
+	{
+		"id": "7",
+		"title": "Education Reform Bill Passes Parliament with Overwhelming Support",
+		"description": "Landmark education reform legislation promises to transform the national education system.",
+		"content": "Parliament has passed a comprehensive education reform bill with bipartisan support.\n\nThe reforms focus on digital literacy, vocational training, and teacher development.",
+		"image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&h=800&fit=crop",
+		"category": "national",
+		"author": "Fatima Begum",
+		"publishedAt": "2024-01-13T16:00:00Z",
+		"readTime": 5
+	},
+	{
+		"id": "8",
+		"title": "Space Agency Announces Mission to Mars with International Partners",
+		"description": "Historic international collaboration aims to send the first human mission to Mars by 2030.",
+		"content": "The space agency unveiled plans for a manned mission to Mars involving over 20 countries.\n\nThe mission focuses on sustainability, research, and future colonization.",
+		"image": "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=1200&h=800&fit=crop",
+		"category": "international",
+		"author": "Dr. James Wilson",
+		"publishedAt": "2024-01-13T11:00:00Z",
+		"readTime": 6
+	},
+	{
+		"id": "9",
+		"title": "Tennis Star Wins Grand Slam Title in Stunning Comeback",
+		"description": "Former world number one returns after two years to win a Grand Slam title.",
+		"content": "The champion completed one of the greatest comebacks in tennis history.\n\nThe emotional victory followed a grueling five-set final.",
+		"image": "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=1200&h=800&fit=crop",
+		"category": "sports",
+		"author": "Anna Martinez",
+		"publishedAt": "2024-01-12T22:00:00Z",
+		"readTime": 4
+	},
+	{
+		"id": "10",
+		"title": "Breakthrough in Quantum Computing Opens New Possibilities",
+		"description": "Scientists achieve quantum supremacy milestone, paving the way for revolutionary applications.",
+		"content": "Researchers successfully demonstrated quantum supremacy with a 1000-qubit processor.\n\nThis breakthrough opens doors to drug discovery, climate modeling, and cryptography.",
+		"image": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&h=800&fit=crop",
+		"category": "technology",
+		"author": "Dr. Robert Kim",
+		"publishedAt": "2024-01-12T15:00:00Z",
+		"readTime": 5,
+		"isTrending": true
+	},
+	{
+		"id": "11",
+		"title": "Music Festival Draws Record Crowds from Around the World",
+		"description": "Annual music festival attracts over 500,000 attendees worldwide.",
+		"content": "The three-day music festival featured international artists, cultural exhibitions, and sustainable practices.\n\nThe event generated significant economic benefits.",
+		"image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1200&h=800&fit=crop",
+		"category": "entertainment",
+		"author": "David Brown",
+		"publishedAt": "2024-01-12T10:00:00Z",
+		"readTime": 3
+	},
+	{
+		"id": "12",
+		"title": "Central Bank Announces New Monetary Policy Framework",
+		"description": "Central bank introduces innovative monetary policy measures for economic stability.",
+		"content": "The central bank announced a new monetary policy framework with flexible inflation targeting and digital currency pilots.\n\nThe framework aims to support sustainable growth.",
+		"image": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&h=800&fit=crop",
+		"category": "business",
+		"author": "Jennifer Lee",
+		"publishedAt": "2024-01-11T14:00:00Z",
+		"readTime": 5
+	}
+]
