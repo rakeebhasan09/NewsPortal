@@ -1,16 +1,12 @@
 import { useEffect, useState } from "react";
 import FeaturedNews from "../../components/FeaturedNews";
 import LeftSide from "../../components/LeftSide";
+import RightSide from "../../components/RightSide";
+import { useOutletContext } from "react-router";
 
 const Home = () => {
-	const [categories, setCategories] = useState([]);
-	const [activeCategory, setActiveCategory] = useState("Home");
+	const { activeCategory } = useOutletContext();
 	const [news, setNews] = useState([]);
-	useEffect(() => {
-		fetch("/newsCategory.json")
-			.then((res) => res.json())
-			.then((data) => setCategories(data));
-	}, []);
 
 	useEffect(() => {
 		fetch("/newsData.json")
@@ -19,7 +15,7 @@ const Home = () => {
 	}, []);
 
 	const filteredNews =
-		activeCategory === "Home"
+		activeCategory === null
 			? news
 			: news.filter(
 					(nws) =>
@@ -27,58 +23,10 @@ const Home = () => {
 						activeCategory.toLowerCase()
 			  );
 	return (
-		<div className="inter min-h-screen">
-			{/* Category Buttons */}
-			<div className="border-b border-b-[#e3e6eb] bg-white fixed w-full z-10 top-26 md:top-29.25">
-				<div className="container">
-					<div className="py-2 flex flex-wrap gap-1">
-						{/* Home Button */}
-						<button
-							onClick={() => setActiveCategory("Home")}
-							className={`px-4 py-2 text-sm font-medium rounded-md transition-colors
-								${
-									activeCategory === "Home"
-										? "bg-primary text-(--color-primary-foreground)"
-										: "text-(--color-foreground) hover:bg-primary/10"
-								}
-							`}
-						>
-							Home
-						</button>
-
-						{/* Dynamic Categories */}
-						{categories.map((category) => {
-							const isActive = activeCategory === category.nameEn;
-
-							return (
-								<button
-									key={category.nameEn}
-									onClick={() =>
-										setActiveCategory(category.nameEn)
-									}
-									className={`px-4 py-2 text-sm font-medium rounded-md transition-colors
-										${
-											isActive
-												? "bg-primary text-(--color-primary-foreground)"
-												: "text-(--color-foreground) hover:bg-primary/10"
-										}
-									`}
-								>
-									{category.nameEn}
-								</button>
-							);
-						})}
-					</div>
-				</div>
-			</div>
-
+		<div className="inter ">
 			{/* News Sections */}
-			<section
-				className={`sm:pt-24 ${
-					activeCategory === "Home" ? "pt-40 py-8" : "pt-0 py-0"
-				}`}
-			>
-				{activeCategory === "Home" && <FeaturedNews />}
+			<section className={`py-8 ${activeCategory !== null && "pt-0"}`}>
+				{activeCategory === null && <FeaturedNews />}
 			</section>
 
 			{/* All News */}
@@ -90,7 +38,9 @@ const Home = () => {
 							filteredNews={filteredNews}
 						/>
 					</div>
-					<div className="space-y-6"></div>
+					<div className="space-y-6">
+						<RightSide />
+					</div>
 				</div>
 			</div>
 		</div>

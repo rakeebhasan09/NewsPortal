@@ -6,18 +6,25 @@ import { Outlet } from "react-router";
 
 const RootLayout = () => {
 	const [categories, setCategories] = useState([]);
+	const [activeCategory, setActiveCategory] = useState(null);
+
 	useEffect(() => {
 		fetch("/newsCategory.json")
 			.then((res) => res.json())
 			.then((data) => setCategories(data));
 	}, []);
+
 	return (
 		<>
 			<div className="sticky top-0 z-10">
 				<TopHeader />
-				<Header />
+				<Header
+					categories={categories}
+					activeCategory={activeCategory}
+					setActiveCategory={setActiveCategory}
+				/>
 			</div>
-			<Outlet />
+			<Outlet context={{ categories, activeCategory }} />
 			<Footer categories={categories} />
 		</>
 	);

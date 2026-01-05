@@ -1,8 +1,16 @@
 import { Menu, Search, X } from "lucide-react";
 import React from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 
-const Header = () => {
+const Header = ({ categories, activeCategory, setActiveCategory }) => {
+	const location = useLocation();
+	const isHomePage = location.pathname === "/";
+	const navigate = useNavigate();
+
+	const handleCategoryClick = (category) => {
+		setActiveCategory(category);
+		navigate("/");
+	};
 	return (
 		<div className="bg-white">
 			<div className="border-b border-b-[#e3e6eb]">
@@ -52,6 +60,53 @@ const Header = () => {
 								Subscribe
 							</button>
 						</div>
+					</div>
+				</div>
+			</div>
+
+			{/* Category Buttons */}
+			<div className="border-b border-b-[#e3e6eb] bg-white  z-10 top-26 md:top-29.25">
+				<div className="container">
+					<div className="py-2 flex flex-wrap gap-1">
+						{/* Home Button */}
+						<button
+							onClick={() => {
+								setActiveCategory(null);
+								navigate("/");
+							}}
+							className={`px-4 py-2 text-sm font-medium rounded-md transition-colors
+								${
+									isHomePage && activeCategory === null
+										? "bg-primary text-(--color-primary-foreground)"
+										: "text-(--color-foreground) hover:bg-primary/10"
+								}
+							`}
+						>
+							Home
+						</button>
+
+						{/* Dynamic Categories */}
+						{categories.map((category) => {
+							const isActive = activeCategory === category.nameEn;
+
+							return (
+								<button
+									key={category.nameEn}
+									onClick={() =>
+										handleCategoryClick(category.nameEn)
+									}
+									className={`px-4 py-2 text-sm font-medium rounded-md transition-colors
+										${
+											isHomePage && isActive
+												? "bg-primary text-(--color-primary-foreground)"
+												: "text-(--color-foreground) hover:bg-primary/10"
+										}
+									`}
+								>
+									{category.nameEn}
+								</button>
+							);
+						})}
 					</div>
 				</div>
 			</div>

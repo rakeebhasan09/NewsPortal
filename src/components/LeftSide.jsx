@@ -6,17 +6,17 @@ const LeftSide = ({ activeCategory, filteredNews }) => {
 		<div>
 			<h2
 				className={`text-xl font-bold flex items-center gap-2 ${
-					activeCategory === "Home" && "mb-5"
+					activeCategory === null && "mb-5"
 				}`}
 			>
-				{activeCategory === "Home" && (
+				{activeCategory === null && (
 					<span className="w-1 h-6 bg-primary rounded-full"></span>
 				)}
 
-				{activeCategory === "Home" ? "Latest News" : activeCategory}
+				{activeCategory === null ? "Latest News" : activeCategory}
 			</h2>
-			<p class="text-(--color-muted-foreground) mb-4">
-				{activeCategory === "Home" ||
+			<p className="text-(--color-muted-foreground) mb-4">
+				{activeCategory === null ||
 					`${filteredNews.length} articles found`}
 				{}
 			</p>
