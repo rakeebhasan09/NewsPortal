@@ -8,9 +8,9 @@ import {
 	Twitter,
 	User,
 } from "lucide-react";
-import React from "react";
 import { Link, useLoaderData, useNavigate, useParams } from "react-router";
 import NewaCard from "../../components/cards/NewaCard";
+import toast from "react-hot-toast";
 
 const NewsDetails = () => {
 	const { id } = useParams();
@@ -19,6 +19,12 @@ const NewsDetails = () => {
 	const relatedNews = data.filter(
 		(rn) => rn.category == news.category && rn.title !== news.title
 	);
+
+	const saveNewsToaster = () => {
+		toast.success("Artical Saved!", {
+			duration: 2000,
+		});
+	};
 
 	const navigate = useNavigate();
 	return (
@@ -154,7 +160,10 @@ const NewsDetails = () => {
 									</button>
 								</div>
 							</div>
-							<button className="gap-2 btn btn-outline border border-[#E2E4E9] rounded flex justify-between items-center">
+							<button
+								onClick={saveNewsToaster}
+								className="gap-2 btn btn-outline border border-[#E2E4E9] rounded flex justify-between items-center"
+							>
 								<Bookmark className="h-4 w-4" />
 								Save Article
 							</button>

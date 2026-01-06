@@ -154,6 +154,17 @@ const Footer = ({ categories }) => {
 								</ul>
 							</div>
 						</div>
+
+						{/* Bottom Bar */}
+						<div className="border-t border-(--color-background)/10 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+							<p className="text-(--color-background)/60 text-sm text-center sm:text-left">
+								© {new Date().getFullYear()} NewsPortal. All
+								rights reserved.
+							</p>
+							<p className="text-(--color-background)/60 text-sm">
+								Made with ❤️ for readers everywhere
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>

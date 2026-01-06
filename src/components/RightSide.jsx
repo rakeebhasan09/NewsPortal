@@ -1,5 +1,6 @@
 import { TrendingUp } from "lucide-react";
 import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router";
 
 const RightSide = () => {
@@ -17,8 +18,15 @@ const RightSide = () => {
 			.then((res) => res.json())
 			.then((data) => setCategories(data));
 	}, []);
-
 	const trandingNews = allNews.filter((news) => news.isTrending === true);
+
+	const handleNewsLetterSubscribe = (e) => {
+		e.preventDefault();
+		toast.success("Thanks for newsletter subscription!", {
+			duration: 2000,
+		});
+	};
+
 	return (
 		<div className="space-y-6">
 			{/* Tranding Now */}
@@ -38,7 +46,7 @@ const RightSide = () => {
 								{index < 10 ? `0${index + 1}` : index}
 							</div>
 							<div>
-								<span className="mb-1 inline-block text-[10px]">
+								<span className="mb-1 inline-block text-[10px] capitalize">
 									{tranding.category}
 								</span>
 								<h3 className="text-sm font-medium line-clamp-2 group-hover:text-primary transition-colors">
@@ -78,16 +86,19 @@ const RightSide = () => {
 				<p className="text-sm opacity-90 mb-4">
 					Subscribe to our newsletter for daily news updates.
 				</p>
-				<div className="flex flex-wrap gap-2">
-					<input
-						type="email"
-						placeholder="Your email"
-						className="flex-1 px-3 py-2 rounded-md outline-none text-(--color-foreground) text-sm bg-(--color-background) placeholder:text-(--color-muted-foreground)"
-					/>
-					<button className="px-4 py-2 bg-(--color-background) text-primary font-medium rounded-md hover:bg-(--color-background)/90 transition-colors text-sm">
-						Subscribe
-					</button>
-				</div>
+				<form onSubmit={handleNewsLetterSubscribe}>
+					<div className="flex flex-wrap gap-2">
+						<input
+							type="email"
+							placeholder="Your email"
+							required
+							className="flex-1 px-3 py-2 rounded-md outline-none text-(--color-foreground) text-sm bg-(--color-background) placeholder:text-(--color-muted-foreground)"
+						/>
+						<button className="px-4 py-2 bg-(--color-background) text-primary font-medium rounded-md hover:bg-(--color-background)/90 transition-colors text-sm">
+							Subscribe
+						</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	);

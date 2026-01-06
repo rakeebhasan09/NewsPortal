@@ -1,8 +1,9 @@
-import { Menu, Search, X } from "lucide-react";
-import React from "react";
+import { Search, TextAlignJustify, X } from "lucide-react";
+import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 
 const Header = ({ categories, activeCategory, setActiveCategory }) => {
+	const [showMenu, setShowMenu] = useState(false);
 	const location = useLocation();
 	const isHomePage = location.pathname === "/";
 	const navigate = useNavigate();
@@ -12,7 +13,7 @@ const Header = ({ categories, activeCategory, setActiveCategory }) => {
 		navigate("/");
 	};
 	return (
-		<div className="bg-white">
+		<div className="bg-white relative">
 			<div className="border-b border-b-[#e3e6eb]">
 				<div className="container">
 					<div className="py-4">
@@ -20,7 +21,8 @@ const Header = ({ categories, activeCategory, setActiveCategory }) => {
 							{/* NewsPortal Logo */}
 							<Link
 								className="flex items-center gap-2 group"
-								href="/"
+								to="/"
+								onClick={() => setActiveCategory(null)}
 							>
 								<div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-lg flex items-center justify-center transform group-hover:scale-105 transition-transform">
 									<span className="text-white font-bold text-lg sm:text-xl">
@@ -59,13 +61,25 @@ const Header = ({ categories, activeCategory, setActiveCategory }) => {
 							<button className="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium  transition-colors text-(--color-primary-foreground) h-10 px-4 py-2 hidden md:flex bg-primary hover:bg-primary/90">
 								Subscribe
 							</button>
+
+							<div className="sm:hidden">
+								<button onClick={() => setShowMenu(!showMenu)}>
+									{showMenu ? <X /> : <TextAlignJustify />}
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
 			{/* Category Buttons */}
-			<div className="border-b border-b-[#e3e6eb] bg-white  z-10 top-26 md:top-29.25">
+			<div
+				className={`border-b border-b-[#e3e6eb] bg-white fixed sm:static transition duration-200 ${
+					showMenu
+						? "top-26.25 opacity-100 visible"
+						: "-top-26.25 opacity-0 invisible sm:opacity-100 sm:visible"
+				}`}
+			>
 				<div className="container">
 					<div className="py-2 flex flex-wrap gap-1">
 						{/* Home Button */}
