@@ -13,6 +13,7 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: "news/:id",
+				loader: () => fetch("/newsData.json"),
 				element: <NewsDetails />,
 			},
 		],
